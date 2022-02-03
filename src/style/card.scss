@@ -1,0 +1,40 @@
+.ms_card-box {
+    height: 600px;
+    width: calc((100% - 80px) / 3);
+    margin: 10px;
+    overflow: hidden;
+
+    &:hover .ms_hover {
+        display: block;
+    }
+
+    h2 {
+        text-align: center;
+        color: #fff;
+        background-color: #000;
+        margin: 20px 0 0;
+        height: 50px;
+    }
+    
+    img {
+        width: 100%;
+    }
+
+    .ms_hover {
+        background-color: #000;
+        height: 100%;
+        width: 100%;
+        color: #fff;
+        overflow-y: auto;
+        display: none;
+
+        p {
+            margin: 0;
+            font-size: 20px;
+        }
+
+        strong {
+            font-size: 25px;
+        }
+    }
+}

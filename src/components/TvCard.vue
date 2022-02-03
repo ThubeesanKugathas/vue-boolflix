@@ -6,7 +6,7 @@
             <p><strong>Name: </strong>{{show.name}}</p>
             <p><strong>Original Name: </strong>{{show.original_name}}</p>
             <p><strong>Rating: </strong>{{show.vote_average}}</p>
-            <p><strong>Originl Language: </strong>{{show.original_language}}</p>
+            <p><strong>Originl Language: </strong>{{show.original_language.toUpperCase()}}</p>
             <p><strong>Overview: </strong>{{show.overview}}</p>
         </div>
     </div>

@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <header-box  @search="searchMovie"/>
-    <main-container/>
+    <main-container :movieList="movieList"/>
   </div>
 </template>
 

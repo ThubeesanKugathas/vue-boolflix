@@ -2,8 +2,8 @@
     <header class="d-flex justify-content-between align-items-center p-4">
         <h1>BOOLFLIX</h1>
         <div class="ms_right">
-            <input type="text" v-model="movie" placeholder="Cerca">
-            <button @click="$emit('search', movie)">Cerca</button>
+            <input type="text" v-model="title" placeholder="Search">
+            <button @click="$emit('search', title)">Search</button>
         </div>
     </header>
 </template>
@@ -12,7 +12,7 @@
 export default {
     data() {
         return {
-            movie: '',
+            title: '',
         }
     },
     methods: {}

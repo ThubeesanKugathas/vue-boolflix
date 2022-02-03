@@ -8,7 +8,7 @@
             <p><strong>Rating: </strong>{{movie.vote_average}}</p>
             <p>
                 <strong>Originl Language: </strong>{{movie.original_language.toUpperCase()}} 
-                <img :src="`../assets/${movie.original_language}.png`" :alt="movie.original_language">
+                <img :src="`/flags/${movie.original_language}.png`" :alt="movie.original_language">
             </p>
             <p><strong>Overview: </strong>{{movie.overview}}</p>
         </div>

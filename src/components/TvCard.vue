@@ -6,7 +6,10 @@
             <p><strong>Name: </strong>{{show.name}}</p>
             <p><strong>Original Name: </strong>{{show.original_name}}</p>
             <p><strong>Rating: </strong>{{show.vote_average}}</p>
-            <p><strong>Originl Language: </strong>{{show.original_language.toUpperCase()}}</p>
+            <p>
+                <strong>Originl Language: </strong>{{show.original_language.toUpperCase()}} 
+                <img :src="`/flags/${show.original_language}.png`" :alt="show.original_language">
+            </p>
             <p><strong>Overview: </strong>{{show.overview}}</p>
         </div>
     </div>

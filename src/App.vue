@@ -28,10 +28,12 @@ export default {
   },
   methods: {
     searchTitle(input) {
+      // movies axios.get
       axios.get(`https://api.themoviedb.org/3/search/movie?query=${input}&api_key=0785e92f26ecdb9f62cd6d8a9cbc46ed`).then((response) => {
         this.movieList = response.data.results;
       });
 
+      // tv shows axios.get
       axios.get(`https://api.themoviedb.org/3/search/tv?query=${input}&api_key=0785e92f26ecdb9f62cd6d8a9cbc46ed`).then((response) => {
         this.tvList = response.data.results;
       });

@@ -17,16 +17,6 @@ export default {
     props: {
         show: Object,
     },
-    data() {
-        return {
-            active: false,
-        }
-    },
-    methods: {
-        activeImg() {
-            this.active = !this.active;
-        }
-    }
 }
 </script>
 

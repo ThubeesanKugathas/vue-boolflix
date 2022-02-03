@@ -20,16 +20,6 @@ export default {
     props: {
         movie: Object,
     },
-    data() {
-        return {
-            active: false,
-        }
-    },
-    methods: {
-        activeImg() {
-            this.active = !this.active;
-        }
-    }
 }
 </script>
 

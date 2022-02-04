@@ -5,7 +5,12 @@
         <div class="ms_hover position-absolute top-0 start-0 px-3 py-5">
             <p><strong>Name: </strong>{{show.name}}</p>
             <p><strong>Original Name: </strong>{{show.original_name}}</p>
-            <p><strong>Rating: </strong>{{show.vote_average}}</p>
+            <p>
+                <strong>Rating: </strong>
+                <i class="fas fa-star" 
+                    v-for="(star, i) in Math.round(show.vote_average / 2)" 
+                    :key="i"></i>
+            </p>
             <p>
                 <strong>Originl Language: </strong>{{show.original_language.toUpperCase()}} 
                 <img :src="`/flags/${show.original_language}.png`" :alt="show.original_language">

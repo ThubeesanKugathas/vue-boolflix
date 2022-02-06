@@ -33,7 +33,7 @@ export default {
 
 <style lang="scss" scoped>
     main {
-        background-color: #434343;
+        background-color: #222;
         padding: 20px 0 50px;
 
         h1 {

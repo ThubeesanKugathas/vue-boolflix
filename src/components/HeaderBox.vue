@@ -1,9 +1,19 @@
 <template>
-    <header class="d-flex justify-content-between align-items-center p-4">
-        <h1>BOOLFLIX</h1>
+    <header class="d-flex justify-content-between align-items-center p-3">
+        <div class="ms_left d-flex align-items-center">
+            <img src="../assets/netflix-logo.png" alt="netflix-logo">
+            <ul class="d-flex m-0">
+                <li><a href="#/">Home</a></li>
+                <li><a href="#/">Serie Tv</a></li>
+                <li><a href="#/">Film</a></li>
+                <li><a href="#/">Originali</a></li>
+                <li><a href="#/">Aggiunti di recente</a></li>
+                <li><a href="#/">La mia lista</a></li>
+            </ul>
+        </div>
         <div class="ms_right">
             <input type="text" v-model="title" placeholder="Search">
-            <button @click="$emit('search', title)">Search</button>
+            <i class="fas fa-search" @click="$emit('search', title)"></i>
         </div>
     </header>
 </template>
@@ -20,21 +30,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    header {
-        background-color: #000;
-        height: 80px;
-
-        h1 {
-            color: #e00000;
-            font-weight: bold;
-        }
-
-        .ms_right {
-            font-size: 20px;
-
-            input {
-                margin-right: 10px;
-            }
-        }
-    }
+@import '../style/header.scss'
 </style>

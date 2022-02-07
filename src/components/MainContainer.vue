@@ -1,12 +1,14 @@
 <template>
     <main>
         <!-- MOVIES -->
+        <h1 v-if="movieList.length > 0">MOVIES</h1>
         <div class="ms_container d-flex justify-content-between flex-wrap">
             <movie-card v-for="movie in movieList" 
                 :key="movie.id"
                 :movie="movie" />
         </div>
         <!-- TV SHOWS -->
+        <h1 v-if="tvList.length > 0">TV SHOWS</h1>
         <div class="ms_container d-flex justify-content-between flex-wrap">
             <tv-card v-for="show in tvList" 
                 :key="show.id"

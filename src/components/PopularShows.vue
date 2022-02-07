@@ -1,11 +1,14 @@
 <template>
     <div>
+        <!-- POPULAR MOVIES -->
+        <h1 v-if="popularMovies.length > 0">POPULAR MOVIES</h1>
         <div class="ms_container d-flex justify-content-between flex-wrap">
             <movie-card v-for="popularmovie in popularMovies" 
                 :key="popularmovie.id"
                 :movie="popularmovie" />
         </div>
         <!-- TV SHOWS -->
+        <h1 v-if="popularShows.length > 0">POPULAR TV SHOWS</h1>
         <div class="ms_container d-flex justify-content-between flex-wrap">
             <tv-card v-for="popularshow in popularShows" 
                 :key="popularshow.id"

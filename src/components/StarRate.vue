@@ -30,4 +30,8 @@ export default {
 <style lang="scss" scoped>
     @import url('https://use.fontawesome.com/releases/v5.7.1/css/all.css');
     @import '~bootstrap/scss/bootstrap.scss';
+
+    i {
+        color: yellow;
+    }
 </style>

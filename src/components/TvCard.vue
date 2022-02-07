@@ -1,6 +1,5 @@
 <template>
     <div class="ms_card-box position-relative">
-        <h2>TV SHOW</h2>
         <img :src="`https://image.tmdb.org/t/p/original${show.poster_path}`" :alt="show.name">
         <div class="ms_hover position-absolute top-0 start-0 px-3 py-5">
             <p><strong>Name: </strong>{{show.name}}</p>

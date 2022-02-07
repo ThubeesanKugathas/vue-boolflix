@@ -29,6 +29,7 @@ export default {
     }
   },
   mounted() {
+    // mouted to popular shows and movies in home screen
     axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${this.api_key}&page=1`)
       .then((response) => {
         this.popularMovies = response.data.results;
@@ -40,6 +41,7 @@ export default {
       });
   },
   computed: {
+    // filter to movieList and tvList from showResults
     movieList() {
       let movieList = this.showResults.filter((result) => {
         return result.media_type === 'movie';
@@ -65,6 +67,7 @@ export default {
 
       this.flagEmpty = true;
     },
+    // location reload on Home link click
     reload() {
       location.reload();
     }

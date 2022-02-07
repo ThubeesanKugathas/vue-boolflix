@@ -1,13 +1,8 @@
 <template>
     <div class="d-flex align-items-center">
-        <i class="fas fa-star" 
-            v-for="(star, i) in totStars" 
-            :key="i">
-        </i>
+        <i class="fas fa-star" v-for="(star, i) in totStars" :key="i"></i>
         <div v-if="(5 - totStars) > 0">
-            <i class="far fa-star"
-                v-for="(nostar, index) in (5 - totStars)"
-                :key="index"></i>
+            <i class="far fa-star" v-for="(nostar, index) in (5 - totStars)" :key="index"></i>
         </div>
     </div>
 </template>

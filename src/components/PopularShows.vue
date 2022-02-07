@@ -1,13 +1,13 @@
 <template>
     <div>
         <div class="ms_container d-flex justify-content-between flex-wrap">
-            <popular-movie v-for="popularmovie in popularMovies" 
+            <movie-card v-for="popularmovie in popularMovies" 
                 :key="popularmovie.id"
                 :movie="popularmovie" />
         </div>
         <!-- TV SHOWS -->
         <div class="ms_container d-flex justify-content-between flex-wrap">
-            <popular-show v-for="popularshow in popularShows" 
+            <tv-card v-for="popularshow in popularShows" 
                 :key="popularshow.id"
                 :show="popularshow"/>
         </div>
@@ -15,13 +15,13 @@
 </template>
 
 <script>
-import PopularMovie from './PopularMovie.vue'
-import PopularShow from './PopularShow.vue'
+import MovieCard from './MovieCard.vue'
+import TvCard from './TvCard.vue'
 
 export default {
     components: {
-        PopularMovie,
-        PopularShow,
+        MovieCard,
+        TvCard,
     },
     props: {
         popularMovies: Array,

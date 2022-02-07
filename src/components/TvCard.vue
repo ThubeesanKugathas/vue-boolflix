@@ -6,18 +6,8 @@
             <p><strong>Name: </strong>{{show.name}}</p>
             <p><strong>Original Name: </strong>{{show.original_name}}</p>
             <div class="d-flex align-items-center">
-                <p>
-                    <strong>Rating: </strong>
-                </p>
-                <i class="fas fa-star" 
-                    v-for="(star, i) in Math.round(show.vote_average / 2)" 
-                    :key="i">
-                </i>
-                <div v-if="(5 - Math.round(show.vote_average / 2)) > 0">
-                    <i class="far fa-star"
-                        v-for="(nostar, index) in (5 - Math.round(show.vote_average / 2))"
-                        :key="index"></i>
-                </div>
+                <p><strong>Rating: </strong></p>
+                <star-rate :rate="show.vote_average"/>
             </div>
             <p>
                 <strong>Originl Language: </strong>{{show.original_language.toUpperCase()}} 
@@ -29,7 +19,12 @@
 </template>
 
 <script>
+import StarRate from './StarRate.vue'
+
 export default {
+    components: {
+        StarRate,
+    },
     props: {
         show: Object,
     },

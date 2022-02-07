@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <header-box  @search="searchTitle"/>
-    <empty-main v-if="!flagEmpty" :popularMovies="popularMovies" :popularShows="popularShows"/>
+    <popular-shows v-if="!flagEmpty" :popularMovies="popularMovies" :popularShows="popularShows"/>
     <main-container :movieList="movieList" :tvList="tvList"/>
   </div>
 </template>
@@ -9,48 +9,58 @@
 <script>
 import axios from 'axios'
 import HeaderBox from './components/HeaderBox.vue'
-import EmptyMain from './components/EmptyMain.vue'
+import PopularShows from './components/PopularShows.vue'
 import MainContainer from './components/MainContainer.vue'
 
 export default {
   name: 'App',
   components: {
     HeaderBox,
-    EmptyMain,
+    PopularShows,
     MainContainer,
   },
   data() {
     return {
-      movieList: [],
-      tvList: [],
+      api_key: '0785e92f26ecdb9f62cd6d8a9cbc46ed',
+      showResults: [],
       flagEmpty: false,
       popularMovies: [],
       popularShows: [],
     }
   },
   mounted() {
-    axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=0785e92f26ecdb9f62cd6d8a9cbc46ed&page=1`)
+    axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${this.api_key}&page=1`)
       .then((response) => {
         this.popularMovies = response.data.results;
       });
 
-    axios.get(`https://api.themoviedb.org/3/tv/popular?api_key=0785e92f26ecdb9f62cd6d8a9cbc46ed&page=1`)
+    axios.get(`https://api.themoviedb.org/3/tv/popular?api_key=${this.api_key}&page=1`)
       .then((response) => {
         this.popularShows = response.data.results;
       });
   },
+  computed: {
+    movieList() {
+      let movieList = this.showResults.filter((result) => {
+        return result.media_type === 'movie';
+      });
+
+      return movieList;
+    },
+    tvList() {
+      let tvList = this.showResults.filter((result) => {
+        return result.media_type === 'tv';
+      });
+
+      return tvList;
+    },
+  },
   methods: {
     searchTitle(input) {
-      // movies axios.get
-      axios.get(`https://api.themoviedb.org/3/search/movie?query=${input}&api_key=0785e92f26ecdb9f62cd6d8a9cbc46ed`)
+      // axios.get multi
+      axios.get(`https://api.themoviedb.org/3/search/multi?query=${input}&api_key=${this.api_key}`)
         .then((response) => {
-          this.movieList = response.data.results;
-        });
-
-      // tv shows axios.get
-      axios.get(`https://api.themoviedb.org/3/search/tv?query=${input}&api_key=0785e92f26ecdb9f62cd6d8a9cbc46ed`)
-        .then((response) => {
-          this.tvList = response.data.results;
+          this.showResults = response.data.results;
         });
 
       this.flagEmpty = true;

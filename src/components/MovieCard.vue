@@ -6,18 +6,8 @@
             <p><strong>Title: </strong>{{movie.title}}</p>
             <p><strong>Original Title: </strong>{{movie.original_title}}</p>
             <div class="d-flex align-items-center">
-                <p>
-                    <strong>Rating: </strong>
-                </p>
-                <i class="fas fa-star" 
-                    v-for="(star, i) in Math.round(movie.vote_average / 2)" 
-                    :key="i">
-                </i>
-                <div v-if="(5 - Math.round(movie.vote_average / 2)) > 0">
-                    <i class="far fa-star"
-                        v-for="(nostar, index) in (5 - Math.round(movie.vote_average / 2))"
-                        :key="index"></i>
-                </div>
+                <p><strong>Rating: </strong></p>
+                <star-rate :rate="movie.vote_average"/>
             </div>
             <p>
                 <strong>Originl Language: </strong>{{movie.original_language.toUpperCase()}} 
@@ -29,7 +19,12 @@
 </template>
 
 <script>
+import StarRate from './StarRate.vue'
+
 export default {
+    components: {
+        StarRate,
+    },
     props: {
         movie: Object,
     },

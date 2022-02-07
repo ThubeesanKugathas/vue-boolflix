@@ -5,7 +5,7 @@
         <div class="ms_container d-flex">
             <movie-card v-for="movie in movieList" 
                 :key="movie.id"
-                :movie="movie" />
+                :movie="movie"/>
         </div>
         <!-- TV SHOWS -->
         <h1 v-if="tvList.length > 0">TV SHOWS</h1>
@@ -29,7 +29,7 @@ export default {
     props: {
         movieList: Array,
         tvList: Array,
-    }
+    },
 }
 </script>
 

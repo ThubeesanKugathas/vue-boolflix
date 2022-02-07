@@ -9,5 +9,20 @@
 
     .ms_container {
         overflow-x: auto;
+        margin-bottom: 50px;             /* width of the entire scrollbar */
+
+        &::-webkit-scrollbar {
+            height: 12px;
+        }
+        
+        &::-webkit-scrollbar-track {
+            background: rgba($color: #000000, $alpha: 0.0);        /* color of the tracking area */
+        }
+        
+        &::-webkit-scrollbar-thumb {
+            background-color: #aaa;    /* color of the scroll thumb */
+            border-radius: 20px;       /* roundness of the scroll thumb */
+        }
     }
+
 }

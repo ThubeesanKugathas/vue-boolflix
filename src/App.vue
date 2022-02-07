@@ -70,7 +70,7 @@ export default {
     // location reload on Home link click
     reload() {
       location.reload();
-    }
+    },
   }
 }
 </script>

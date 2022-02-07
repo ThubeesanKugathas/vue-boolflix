@@ -1,6 +1,6 @@
 <template>
     <div class="ms_card-box position-relative">
-        <img :src="`https://image.tmdb.org/t/p/original${movie.poster_path}`" :alt="movie.title">
+        <img :src="`https://image.tmdb.org/t/p/w342${movie.poster_path}`" :alt="movie.title">
         <div class="ms_hover position-absolute top-0 start-0 px-3 py-5">
             <p><strong>Title: </strong>{{movie.title}}</p>
             <p><strong>Original Title: </strong>{{movie.original_title}}</p>
@@ -31,5 +31,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../style/card.scss';
+    @import '../style/card.scss';
 </style>

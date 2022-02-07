@@ -1,15 +1,15 @@
 <template>
-    <div>
+    <div class="ms_component-container">
         <!-- POPULAR MOVIES -->
         <h1 v-if="popularMovies.length > 0">POPULAR MOVIES</h1>
-        <div class="ms_container d-flex justify-content-between flex-wrap">
+        <div class="ms_container d-flex">
             <movie-card v-for="popularmovie in popularMovies" 
                 :key="popularmovie.id"
                 :movie="popularmovie" />
         </div>
         <!-- TV SHOWS -->
         <h1 v-if="popularShows.length > 0">POPULAR TV SHOWS</h1>
-        <div class="ms_container d-flex justify-content-between flex-wrap">
+        <div class="ms_container d-flex">
             <tv-card v-for="popularshow in popularShows" 
                 :key="popularshow.id"
                 :show="popularshow"/>
@@ -34,18 +34,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    div {
-        background-color: #222;
-        padding: 20px 0 50px;
-
-        h1 {
-            margin-left: 100px;
-            color: #fff;
-        }
-
-        .ms_container {
-            width: 1200px;
-            margin: 0 auto 100px; 
-        }
-    }
+    @import '../style/container.scss';
 </style>

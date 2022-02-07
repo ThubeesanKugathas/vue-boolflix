@@ -1,15 +1,15 @@
 <template>
-    <main>
+    <main class="ms_component-container">
         <!-- MOVIES -->
         <h1 v-if="movieList.length > 0">MOVIES</h1>
-        <div class="ms_container d-flex justify-content-between flex-wrap">
+        <div class="ms_container d-flex">
             <movie-card v-for="movie in movieList" 
                 :key="movie.id"
                 :movie="movie" />
         </div>
         <!-- TV SHOWS -->
         <h1 v-if="tvList.length > 0">TV SHOWS</h1>
-        <div class="ms_container d-flex justify-content-between flex-wrap">
+        <div class="ms_container d-flex">
             <tv-card v-for="show in tvList" 
                 :key="show.id"
                 :show="show"/>
@@ -34,18 +34,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    main {
-        background-color: #222;
-        padding: 20px 0 50px;
-
-        h1 {
-            margin-left: 100px;
-            color: #fff;
-        }
-
-        .ms_container {
-            width: 1200px;
-            margin: 0 auto 100px; 
-        }
-    }
+    @import '../style/container.scss';
 </style>

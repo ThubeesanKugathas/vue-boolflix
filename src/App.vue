@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <header-box  @search="searchTitle"/>
+    <header-box  @search="searchTitle" @reload="reload"/>
     <popular-shows v-if="!flagEmpty" :popularMovies="popularMovies" :popularShows="popularShows"/>
     <main-container :movieList="movieList" :tvList="tvList"/>
   </div>
@@ -64,6 +64,9 @@ export default {
         });
 
       this.flagEmpty = true;
+    },
+    reload() {
+      location.reload();
     }
   }
 }

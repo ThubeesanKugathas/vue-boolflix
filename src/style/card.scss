@@ -1,7 +1,6 @@
 .ms_card-box {
-    height: 600px;
-    width: calc((100% - 80px) / 3);
-    margin: 10px;
+    min-width: 400px;
+    max-width: 400px;
     overflow: hidden;
 
     &:hover .ms_hover {
@@ -13,13 +12,12 @@
     }
 
     .ms_hover {
-        background-color: #000;
-        height: 100%;
+        background-color: rgba($color: #000000, $alpha: 0.8);
         width: 100%;
+        height: 100%;
         color: #fff;
         overflow-y: auto;
         display: none;
-        margin-top: 20px;
 
         p {
             margin: 0;

@@ -3,7 +3,7 @@
         <div class="ms_left d-flex align-items-center">
             <img src="../assets/netflix-logo.png" alt="netflix-logo">
             <ul class="d-flex m-0">
-                <li><a href="#/">Home</a></li>
+                <li><a href="#/" @click="$emit('reload')">Home</a></li>
                 <li><a href="#/">Serie Tv</a></li>
                 <li><a href="#/">Film</a></li>
                 <li><a href="#/">Originali</a></li>
@@ -30,5 +30,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../style/header.scss'
+    @import '../style/header.scss';
 </style>
